@@ -1,0 +1,6 @@
+module Pods_BeyondCodelineRnBoilerplate {
+  umbrella header "Pods-BeyondCodelineRnBoilerplate-umbrella.h"
+
+  export *
+  module * { export * }
+}

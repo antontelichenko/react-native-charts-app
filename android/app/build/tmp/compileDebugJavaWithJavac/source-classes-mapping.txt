@@ -1,0 +1,14 @@
+com/beyondcodelinernboilerplate/MainActivity.java
+ com.beyondcodelinernboilerplate.MainActivity
+com/beyondcodelinernboilerplate/BuildConfig.java
+ com.beyondcodelinernboilerplate.BuildConfig
+com/beyondcodelinernboilerplate/ReactNativeFlipper.java
+ com.beyondcodelinernboilerplate.ReactNativeFlipper
+ com.beyondcodelinernboilerplate.ReactNativeFlipper$1
+ com.beyondcodelinernboilerplate.ReactNativeFlipper$2
+ com.beyondcodelinernboilerplate.ReactNativeFlipper$2$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+com/beyondcodelinernboilerplate/MainApplication.java
+ com.beyondcodelinernboilerplate.MainApplication
+ com.beyondcodelinernboilerplate.MainApplication$1

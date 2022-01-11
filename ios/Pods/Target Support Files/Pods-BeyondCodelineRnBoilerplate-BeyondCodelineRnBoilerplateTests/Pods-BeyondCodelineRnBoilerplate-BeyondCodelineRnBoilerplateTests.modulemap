@@ -1,0 +1,6 @@
+module Pods_BeyondCodelineRnBoilerplate_BeyondCodelineRnBoilerplateTests {
+  umbrella header "Pods-BeyondCodelineRnBoilerplate-BeyondCodelineRnBoilerplateTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
