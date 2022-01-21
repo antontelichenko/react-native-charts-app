@@ -18,11 +18,14 @@ import reactotron from '../services/reactotron';
 import rootSaga from '../sagas';
 
 // Reducers
-import { appSlice, userSlice } from './slices';
+import { appSlice, exchangeSlice_18, exchangeSlice_19, exchangeSlice_20, userSlice } from './slices';
 
 export const rootReducer = combineReducers({
   app: appSlice.reducer,
   user: userSlice.reducer,
+  course_18: exchangeSlice_18.reducer,
+  course_19: exchangeSlice_19.reducer,
+  course_20: exchangeSlice_20.reducer,
 });
 
 const persistConfig: PersistConfig<ReturnType<typeof rootReducer>> = {

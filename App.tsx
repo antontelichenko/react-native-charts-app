@@ -12,8 +12,8 @@ enableScreens();
 const App: React.FC = () => (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <RootNavigator />
-    </PersistGate>
+    <RootNavigator />
+      </PersistGate>
   </Provider>
 );
 

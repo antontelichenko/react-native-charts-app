@@ -1,5 +1,6 @@
-import React, { useCallback } from 'react';
-import { View, TouchableOpacity, Image } from 'react-native';
+import React, {useCallback} from 'react';
+import { View, TouchableOpacity, Image, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { IMAGES } from '../../assets';
 
@@ -15,14 +16,8 @@ export const HomeScreen: React.FC<IHomeScreenProps> = () => {
 
   const dispatch = useAppDispatch();
 
-  const onTestDispatchAction = useCallback(() => {
-    dispatch(
-      userSlice.actions.loginUser({
-        email: TEST_USERNAME,
-        password: TEST_PASSWORD,
-      }),
-    );
-  }, []);
+  const navigation = useNavigation()
+
 
   return (
     <SafeAreaView style={styles.root}>
@@ -31,18 +26,23 @@ export const HomeScreen: React.FC<IHomeScreenProps> = () => {
           <Image source={IMAGES.LOGO} style={styles.logo} />
           <DefaultText preset="title">Beyond Codeline</DefaultText>
         </View>
-        <DefaultText preset="default" style={styles.description}>
-          The Best React Native Boilerplate
-        </DefaultText>
+        
+      <TouchableOpacity onPress={()=>navigation.navigate('course18')}>
+          <Text>Курс валют на 01.01.2018</Text>
+      </TouchableOpacity>
+ 
+      <TouchableOpacity onPress={()=>navigation.navigate('course19')}>
+          <Text>
+            Курс валют на 01.01.2019
+          </Text>
+      </TouchableOpacity>
 
-        <TouchableOpacity
-          onPress={onTestDispatchAction}
-          style={styles.dispatchTestButtonContainer}>
-          <DefaultText preset="default" style={styles.dispatchTestButtonText}>
-            Dispatch action!
-          </DefaultText>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
+      <TouchableOpacity onPress={()=>navigation.navigate('course20')}>
+          <Text >
+            Курс валют на 01.01.2020
+          </Text>
+      </TouchableOpacity>
+    </View>
+  </SafeAreaView>
   );
 };

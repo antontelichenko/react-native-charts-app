@@ -7,6 +7,10 @@ export interface IApiLoginSuccessResponse {
   user: IApiUser;
 }
 
+export interface IApiCourseSuccessResponse {
+  course: number;
+}
+
 export type IErrorResponse = {
   error: string;
 };

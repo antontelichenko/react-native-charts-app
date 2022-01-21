@@ -12,7 +12,7 @@ interface IUserState {
   token: string;
 }
 
-export const INITIAL_STATE: IUserState = {
+const INITIAL_STATE: IUserState = {
   user: null,
   token: '',
 };
