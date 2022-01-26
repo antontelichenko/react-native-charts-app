@@ -1,30 +1,33 @@
-import React, { useEffect } from 'react';
-import { View, Text } from 'react-native';
-import { exchangeSlice_20 } from '../../redux/slices';
-import { useAppDispatch, useAppSelector } from '../../hooks';
+import React, { useEffect } from 'react'
+import { View, Text } from 'react-native'
+import { exchangeSlice20 } from '../../redux/slices'
+import { HomeScreen } from '..'
+import { useAppDispatch, useAppSelector } from '../../hooks'
+import { styles } from './Course.styles'
 
-export const Course20 = () =>{
-const dispatch = useAppDispatch();
-const data20 = useAppSelector(state=>state.course_20)
+export const Course20 = () => {
+  const dispatch = useAppDispatch()
+  const data20 = useAppSelector((state) => state.course20)
 
-console.tron.log('20', data20.course)
+  console.tron.log('20usd', data20.course.exchangeRate)
 
-useEffect(()=>{
-dispatch(exchangeSlice_20.actions.getCourseStatistic20());
-},[dispatch])
+  useEffect(() => {
+    dispatch(exchangeSlice20.actions.getCourseStatistic20())
+  }, [dispatch])
 
-return (
-    <View>
-    <Text>Курс валют национального банка на 01.01.2020</Text>
-    <Text>USD</Text>
-    <Text>{data20.course.exchangeRate[16].saleRateNB}</Text>
-    <Text>EUR</Text>
-    <Text></Text>
-    <Text>{data20.course.exchangeRate[22].saleRateNB}</Text>
-    
-    
-    
-    
+  return (
+    <View style={styles.container}>
+      <HomeScreen />
+      <Text style={styles.text}>
+        Курс национального банка на 01.01.2020 {'\n'}
+      </Text>
+      <Text style={styles.textCourse}>
+        USD: {data20.course?.exchangeRate[23].saleRateNB}
+        {'\n'}
+      </Text>
+      <Text style={styles.textCourse}>
+        EUR: {data20.course?.exchangeRate[8].saleRateNB}
+      </Text>
     </View>
-)
+  )
 }

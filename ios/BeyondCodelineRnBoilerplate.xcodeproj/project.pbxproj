@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,9 +11,10 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		3EDB753927A001AE0031B6A8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EDB753827A001AE0031B6A8 /* CoreGraphics.framework */; };
 		4948E84DF56293E459C23630 /* libPods-BeyondCodelineRnBoilerplate-BeyondCodelineRnBoilerplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D7029F34C45FE407484C41 /* libPods-BeyondCodelineRnBoilerplate-BeyondCodelineRnBoilerplateTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		90E26752594693B9E7BCE805 /* libPods-BeyondCodelineRnBoilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7030238D801CA81009C66E52 /* libPods-BeyondCodelineRnBoilerplate.a */; };
+		90E26752594693B9E7BCE805 /* libPods-BeyondCodelineRnBoilerplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7030238D801CA81009C66E52 /* libPods-BeyondCodelineRnBoilerplate.a */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,10 @@
 		194535E6ABAD4C1C0F15692D /* Pods-BeyondCodelineRnBoilerplate-BeyondCodelineRnBoilerplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeyondCodelineRnBoilerplate-BeyondCodelineRnBoilerplateTests.release.xcconfig"; path = "Target Support Files/Pods-BeyondCodelineRnBoilerplate-BeyondCodelineRnBoilerplateTests/Pods-BeyondCodelineRnBoilerplate-BeyondCodelineRnBoilerplateTests.release.xcconfig"; sourceTree = "<group>"; };
 		233726C6F273DA7B39595220 /* Pods-BeyondCodelineRnBoilerplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeyondCodelineRnBoilerplate.release.xcconfig"; path = "Target Support Files/Pods-BeyondCodelineRnBoilerplate/Pods-BeyondCodelineRnBoilerplate.release.xcconfig"; sourceTree = "<group>"; };
 		35D7029F34C45FE407484C41 /* libPods-BeyondCodelineRnBoilerplate-BeyondCodelineRnBoilerplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeyondCodelineRnBoilerplate-BeyondCodelineRnBoilerplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EDB753627A001060031B6A8 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
+		3EDB753827A001AE0031B6A8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3EDB753A27A002090031B6A8 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		3EDB753C27A0022E0031B6A8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7030238D801CA81009C66E52 /* libPods-BeyondCodelineRnBoilerplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeyondCodelineRnBoilerplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = BeyondCodelineRnBoilerplate/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B47DFE01DDDDC7317007054C /* Pods-BeyondCodelineRnBoilerplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeyondCodelineRnBoilerplate.debug.xcconfig"; path = "Target Support Files/Pods-BeyondCodelineRnBoilerplate/Pods-BeyondCodelineRnBoilerplate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -59,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EDB753927A001AE0031B6A8 /* CoreGraphics.framework in Frameworks */,
 				90E26752594693B9E7BCE805 /* libPods-BeyondCodelineRnBoilerplate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +105,10 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3EDB753C27A0022E0031B6A8 /* Foundation.framework */,
+				3EDB753A27A002090031B6A8 /* ExternalAccessory.framework */,
+				3EDB753827A001AE0031B6A8 /* CoreGraphics.framework */,
+				3EDB753627A001060031B6A8 /* XcodeKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				7030238D801CA81009C66E52 /* libPods-BeyondCodelineRnBoilerplate.a */,
 				35D7029F34C45FE407484C41 /* libPods-BeyondCodelineRnBoilerplate-BeyondCodelineRnBoilerplateTests.a */,
@@ -145,7 +155,6 @@
 				D42CEEE081605C40DE46841F /* Pods-BeyondCodelineRnBoilerplate-BeyondCodelineRnBoilerplateTests.debug.xcconfig */,
 				194535E6ABAD4C1C0F15692D /* Pods-BeyondCodelineRnBoilerplate-BeyondCodelineRnBoilerplateTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,7 +222,7 @@
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "BeyondCodelineRnBoilerplate" */;
-			compatibilityVersion = "Xcode 12.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (

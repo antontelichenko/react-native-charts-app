@@ -1,6 +1,4 @@
-import { StyleSheet, ViewStyle, TextStyle, ImageStyle } from 'react-native';
-
-import { COLORS } from '../../themes/colors';
+import { StyleSheet, ViewStyle, TextStyle, ImageStyle } from 'react-native'
 
 interface IHomeScreenStyles {
   root: ViewStyle;
@@ -13,14 +11,6 @@ interface IHomeScreenStyles {
 }
 
 export const styles = StyleSheet.create<IHomeScreenStyles>({
-  root: {
-    flex: 1,
-    backgroundColor: COLORS.WHITE,
-  },
-  body: {
-    padding: 20,
-  },
-
   titleContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -32,16 +22,4 @@ export const styles = StyleSheet.create<IHomeScreenStyles>({
     borderRadius: 20,
     marginRight: 8,
   },
-
-  description: {
-    marginVertical: 16,
-  },
-
-  dispatchTestButtonContainer: {
-    backgroundColor: COLORS.BLACK,
-    padding: 16,
-  },
-  dispatchTestButtonText: {
-    color: COLORS.WHITE,
-  },
-});
+})
