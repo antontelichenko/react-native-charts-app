@@ -1,33 +1,16 @@
-import { StyleSheet } from 'react-native';
-
-
-
-
+import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
-  root: {
+  container: {
     flex: 1,
-  },
-  body: {
-    padding: 20,
-  },
-
-  titleContainer: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  
-
-  description: {
-    marginVertical: 16,
+  text: {
+    fontSize: 16,
   },
-
-  dispatchTestButtonContainer: {
-    backgroundColor: COLORS.BLACK,
-    padding: 16,
+  textCourse: {
+    fontSize: 18,
   },
-  dispatchTestButtonText: {
-    color: COLORS.WHITE,
-  },
-});
+})

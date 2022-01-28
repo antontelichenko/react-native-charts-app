@@ -23,9 +23,9 @@ class Api {
   };
 
   
-  getCourse_18 = () =>this.client.get('/exchange_rates?json&date=01.01.2018');
-  getCourse_19 = () =>this.client.get('/exchange_rates?json&date=01.01.2019');
-  getCourse_20 = () =>this.client.get('/exchange_rates?json&date=01.01.2020');
+  getCourse18 = () =>this.client.get('/exchange_rates?json&date=01.01.2018');
+  getCourse19 = () =>this.client.get('/exchange_rates?json&date=01.01.2019');
+  getCourse20 = () =>this.client.get('/exchange_rates?json&date=01.01.2020');
 
   loginUser = (params: IApiLoginUserPayload) =>
     this.client.post<IApiUser>('/api/v1/auth/login', params);

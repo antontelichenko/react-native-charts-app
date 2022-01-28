@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
-
 import { IApiCourse } from '../../models/ICourse'
+import { IExchange } from '../types/exchange'
 
 interface ICourseState {
   course: {
@@ -16,27 +16,20 @@ const INITIAL_STATE: ICourseState = {
   course: null,
 }
 
-export const exchangeSlice_18 = createSlice({
-  name: 'course',
+export const exchangeSlice20 = createSlice({
+  name: 'course20',
   initialState: INITIAL_STATE,
   reducers: {
-    getCourseStatistic18() {},
+    getCourseStatistic20(state, action: IExchange) {},
     getCourseStatisticSuccess(
       state,
       {
-        payload: courseStatistic,
+        payload: courseStatistic20,
       }: {
-        payload: {
-          //вынести в файл
-          exchangeRate: IApiCourse[],
-          date: string,
-          bank: string,
-          baseCurrency: number,
-          baseCurrencyLit: string,
-        },
+        payload: IExchange,
       }
     ) {
-      state.course = courseStatistic
+      state.course = courseStatistic20
     },
     getCourseStatisticError(state, action) {},
   },
