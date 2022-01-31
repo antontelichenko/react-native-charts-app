@@ -16,11 +16,11 @@ const INITIAL_STATE: ICourseState = {
   course: null,
 }
 
-export const exchangeSlice19 = createSlice({
+export const exchange19Slice = createSlice({
   name: 'course19',
   initialState: INITIAL_STATE,
   reducers: {
-    getCourseStatistic19(state, action: IExchange) {},
+    getCourseStatistic19(state) {},
     getCourseStatisticSuccess(
       state,
       {

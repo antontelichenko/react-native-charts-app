@@ -1,8 +1,8 @@
-import { ApiResponse } from 'apisauce'
+import { ApiResponse } from 'apisauce';
 
-import { IApiUser } from './api.types'
+import { IApiUser } from './api.types';
 
-import { IApiCourse } from '../../models/ICourse'
+import { IApiCourse } from '../../models/ICourse';
 
 export interface IApiLoginSuccessResponse {
   token: string;
@@ -10,13 +10,13 @@ export interface IApiLoginSuccessResponse {
 }
 
 export type IErrorResponse = {
-  error: string,
-}
+  error: string;
+};
 
 export type LoginUserResponse = ApiResponse<
   IApiLoginSuccessResponse,
   IErrorResponse
->
+>;
 
 export interface IApiRegisterSuccessResponse {
   token: string;
@@ -26,14 +26,15 @@ export interface IApiRegisterSuccessResponse {
 export type RegisterUserResponse = ApiResponse<
   IApiRegisterSuccessResponse,
   IErrorResponse
->
+>;
 
 export interface IExchange {
   data: {
-    date: string,
-    bank: string,
-    baseCurrency: number,
-    baseCurrencyLit: string,
-    exchangeRate: IApiCourse,
+    date: string;
+    bank: string;
+    baseCurrency: number;
+    baseCurrencyLit: string;
+    exchangeRate: IApiCourse;
   };
+  ok: boolean;
 }

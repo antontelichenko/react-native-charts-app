@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { View, Text } from 'react-native'
-import { exchangeSlice19 } from '../../redux/slices'
+import { exchange19Slice } from '../../redux/slices'
 import { HomeScreen } from '..'
 import { useAppDispatch, useAppSelector } from '../../hooks'
 import { styles } from './Course.styles'
@@ -10,7 +10,7 @@ export const Course19 = () => {
   const data19 = useAppSelector((state) => state.course19)
 
   useEffect(() => {
-    dispatch(exchangeSlice19.actions.getCourseStatistic19())
+    dispatch(exchange19Slice.actions.getCourseStatistic19())
   }, [dispatch])
 
   return (

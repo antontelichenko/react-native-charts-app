@@ -15,12 +15,12 @@ interface ICourseState {
 const INITIAL_STATE: ICourseState = {
   course: null,
 }
-
-export const exchangeSlice18 = createSlice({
+//todo exchange18Slice
+export const exchange18Slice = createSlice({
   name: 'course18',
   initialState: INITIAL_STATE,
   reducers: {
-    getCourseStatistic18(state, action: IExchange) {},
+    getCourseStatistic18(state) {},
     getCourseStatisticSuccess(
       state,
       {
