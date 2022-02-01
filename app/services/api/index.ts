@@ -1,4 +1,5 @@
 import apisauce, { ApisauceInstance } from 'apisauce';
+import { IExchange } from '../api/api-response.types';
 
 import CONFIG from '../../config/env';
 import { IApiUser } from './api.types';
@@ -21,6 +22,13 @@ class Api {
   setAuthHeader = (token: string) => {
     this.client.setHeader('Authorization', `Bearer ${token}`);
   };
+
+  getCourse18 = (api: IExchange) =>
+    this.client.get('/exchange_rates?json&date=01.01.2018', api);
+  getCourse19 = (api: IExchange) =>
+    this.client.get('/exchange_rates?json&date=01.01.2019', api);
+  getCourse20 = (api: IExchange) =>
+    this.client.get('/exchange_rates?json&date=01.01.2020', api);
 
   loginUser = (params: IApiLoginUserPayload) =>
     this.client.post<IApiUser>('/api/v1/auth/login', params);
