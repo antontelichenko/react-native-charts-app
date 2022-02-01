@@ -1,18 +1,18 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import {IApiUser} from '../../models/IUser';
+import { IApiUser } from '../../models/IUser';
 import {
   IApiLoginSuccessResponse,
   IApiRegisterSuccessResponse,
 } from '../../services/api/api-response.types';
-import {ILoginUserActionPayload, IRegisterUserActionPayload} from '../types';
+import { ILoginUserActionPayload, IRegisterUserActionPayload } from '../types';
 
 interface IUserState {
   user: IApiUser | null;
   token: string;
 }
 
-const INITIAL_STATE: IUserState = {
+export const INITIAL_STATE: IUserState = {
   user: null,
   token: '',
 };
@@ -24,7 +24,7 @@ export const userSlice = createSlice({
     loginUser(state, action: ILoginUserActionPayload) {},
     loginUserSuccess(
       state,
-      {payload: {user, token}}: PayloadAction<IApiLoginSuccessResponse>,
+      { payload: { user, token } }: PayloadAction<IApiLoginSuccessResponse>,
     ) {
       state.user = user;
       state.token = token;
@@ -34,7 +34,7 @@ export const userSlice = createSlice({
     registerUser(state, action: IRegisterUserActionPayload) {},
     registerUserSuccess(
       state,
-      {payload: {user, token}}: PayloadAction<IApiRegisterSuccessResponse>,
+      { payload: { user, token } }: PayloadAction<IApiRegisterSuccessResponse>,
     ) {
       state.user = user;
       state.token = token;

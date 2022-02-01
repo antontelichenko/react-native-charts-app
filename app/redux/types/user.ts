@@ -1,5 +1,5 @@
-import {PayloadAction} from '@reduxjs/toolkit';
-import {IApiRegisterSuccessResponse} from '../../services/api/api-response.types';
+import { PayloadAction } from '@reduxjs/toolkit';
+import { IApiRegisterSuccessResponse } from '../../services/api/api-response.types';
 
 export type IRegisterUserActionPayload = PayloadAction<{
   name: string;
