@@ -28,24 +28,12 @@ export const Charts = () => {
     dispatch(exchange20Slice.actions.getCourseStatistic20());
   }, [dispatch]);
 
-  const usd18 = useAppSelector(
-    state => data18.course?.exchangeRate[16].saleRateNB,
-  );
-  const usd19 = useAppSelector(
-    state => data19.course?.exchangeRate[16].saleRateNB,
-  );
-  const usd20 = useAppSelector(
-    state => data20.course?.exchangeRate[23].saleRateNB,
-  );
-  const eur18 = useAppSelector(
-    state => data18.course?.exchangeRate[22].saleRateNB,
-  );
-  const eur19 = useAppSelector(
-    state => data19.course?.exchangeRate[22].saleRateNB,
-  );
-  const eur20 = useAppSelector(
-    state => data20.course?.exchangeRate[8].saleRateNB,
-  );
+  const usd18 = data18.course?.exchangeRate[16].saleRateNB;
+  const usd19 = data19.course?.exchangeRate[16].saleRateNB;
+  const usd20 = data20.course?.exchangeRate[23].saleRateNB;
+  const eur18 = data18.course?.exchangeRate[22].saleRateNB;
+  const eur19 = data19.course?.exchangeRate[22].saleRateNB;
+  const eur20 = data20.course?.exchangeRate[8].saleRateNB;
 
   return (
     <View>
