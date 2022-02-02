@@ -1,2 +1,5 @@
-export * from './appSlice';
-export * from './userSlice';
+export * from './appSlice'
+export * from './userSlice'
+export * from './exchangeSlice18'
+export * from './exchangeSlice19'
+export * from './exchangeSlice20'
