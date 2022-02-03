@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { useAppDispatch, useAppSelector } from '../../hooks';
+import { colors } from '../../utils/colors';
 
 import {
   exchange18Slice,
@@ -56,8 +57,8 @@ export const Charts = () => {
         <Area
           theme={{
             gradient: {
-              from: { color: '#f3f3f3' },
-              to: { color: '#f3f3f3' },
+              from: { color: colors.field },
+              to: { color: colors.field },
             },
           }}
         />
@@ -88,14 +89,14 @@ export const Charts = () => {
         <Area
           theme={{
             gradient: {
-              from: { color: '#f3f3f3' },
-              to: { color: '#f3f3f3' },
+              from: { color: colors.field },
+              to: { color: colors.field },
             },
           }}
         />
         <Line
           theme={{
-            stroke: { color: '#aadd33', width: 5 },
+            stroke: { color: colors.line, width: 5 },
             scatter: { default: { width: 6, height: 6, rx: 2 } },
           }}
         />

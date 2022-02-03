@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
@@ -12,5 +12,6 @@ export const styles = StyleSheet.create({
   },
   textCourse: {
     fontSize: 18,
+    marginTop: 10,
   },
-})
+});

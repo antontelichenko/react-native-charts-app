@@ -15,7 +15,7 @@ interface ICourseState {
 const INITIAL_STATE: ICourseState = {
   course: null,
 };
-//todo exchange18Slice
+
 export const exchange18Slice = createSlice({
   name: 'course18',
   initialState: INITIAL_STATE,
