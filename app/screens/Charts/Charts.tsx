@@ -57,8 +57,8 @@ export const Charts = () => {
         <Area
           theme={{
             gradient: {
-              from: { color: colors.field },
-              to: { color: colors.field },
+              from: { color: colors.CONCRETE },
+              to: { color: colors.CONCRETE },
             },
           }}
         />
@@ -89,14 +89,14 @@ export const Charts = () => {
         <Area
           theme={{
             gradient: {
-              from: { color: colors.field },
-              to: { color: colors.field },
+              from: { color: colors.CONCRETE },
+              to: { color: colors.CONCRETE },
             },
           }}
         />
         <Line
           theme={{
-            stroke: { color: colors.line, width: 5 },
+            stroke: { color: colors.CONIFER, width: 5 },
             scatter: { default: { width: 6, height: 6, rx: 2 } },
           }}
         />

@@ -1,4 +1,4 @@
 export const colors = {
-  field: '#f3f3f3',
-  line: '#aadd33',
+  CONCRETE: '#f3f3f3',
+  CONIFER: '#AADD33',
 };
