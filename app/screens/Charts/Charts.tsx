@@ -16,6 +16,7 @@ import {
   HorizontalAxis,
   VerticalAxis,
 } from 'react-native-responsive-linechart';
+import { COLORS } from '../../themes/colors';
 
 export const Charts = () => {
   const dispatch = useAppDispatch();
@@ -57,8 +58,8 @@ export const Charts = () => {
         <Area
           theme={{
             gradient: {
-              from: { color: colors.CONCRETE },
-              to: { color: colors.CONCRETE },
+              from: { color: colors.COLORS.CONCRETE },
+              to: { color: colors.COLORS.CONCRETE },
             },
           }}
         />
@@ -89,14 +90,14 @@ export const Charts = () => {
         <Area
           theme={{
             gradient: {
-              from: { color: colors.CONCRETE },
-              to: { color: colors.CONCRETE },
+              from: { color: colors.COLORS.CONCRETE },
+              to: { color: colors.COLORS.CONCRETE },
             },
           }}
         />
         <Line
           theme={{
-            stroke: { color: colors.CONIFER, width: 5 },
+            stroke: { color: colors.COLORS.CONIFER, width: 5 },
             scatter: { default: { width: 6, height: 6, rx: 2 } },
           }}
         />
