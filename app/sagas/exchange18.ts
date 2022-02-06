@@ -1,17 +1,26 @@
-import { put, call, takeLatest } from 'redux-saga/effects'
-import { exchange18Slice } from '../redux/slices'
-import { apiInstance } from '../services/api'
-import { IApiCourse } from '../models/ICourse'
-import { IExchange } from '../services/api/api-response.types'
+import { put, call, takeLatest } from 'redux-saga/effects';
+import { exchange18Slice } from '../redux/slices';
+import { apiInstance } from '../services/api';
+import { IApiCourse } from '../models/ICourse';
+import { IExchange } from '../services/api/api-response.types';
 
-function* watchGetCourse() {
-  const response: IExchange = yield call(apiInstance.getCourse18)
+function* watchGetCourse(data) {
+  console.tron?.log('data', data);
+  const response: IExchange = yield call(
+    apiInstance.getCourse18,
+    data?.payload?.payload || '18',
+  );
   if (response.ok && response.data) {
-    yield put(exchange18Slice.actions.getCourseStatisticSuccess(response.data))
+    yield put(exchange18Slice.actions.getCourseStatisticSuccess(response.data));
   } else {
-    yield put(exchange18Slice.actions.getCourseStatisticError('statisticError'))
+    yield put(
+      exchange18Slice.actions.getCourseStatisticError('statisticError'),
+    );
   }
 }
 export function* courseSaga18() {
-  yield takeLatest(exchange18Slice.actions.getCourseStatistic18, watchGetCourse)
+  yield takeLatest(
+    exchange18Slice.actions.getCourseStatistic18,
+    watchGetCourse,
+  );
 }

@@ -10,7 +10,12 @@ export const Course18 = () => {
   const data18 = useAppSelector(state => state.course18);
 
   useEffect(() => {
-    dispatch(exchange18Slice.actions.getCourseStatistic18());
+    dispatch(
+      exchange18Slice.actions.getCourseStatistic18({
+        payload: '18',
+        type: 'getCourseStatistic18',
+      }),
+    );
   }, [dispatch]);
 
   return (

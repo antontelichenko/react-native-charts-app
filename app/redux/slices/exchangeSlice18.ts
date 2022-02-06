@@ -20,7 +20,7 @@ export const exchange18Slice = createSlice({
   name: 'course18',
   initialState: INITIAL_STATE,
   reducers: {
-    getCourseStatistic18(state) {},
+    getCourseStatistic18(state, data) {},
     getCourseStatisticSuccess(
       state,
       {

@@ -23,10 +23,12 @@ class Api {
     this.client.setHeader('Authorization', `Bearer ${token}`);
   };
 
-  getCourse18 = (api: IExchange) =>
-    this.client.get('/exchange_rates?json&date=01.01.2018', api);
+  getCourse18 = (year = '18') => {
+    console.tron.log('api', year);
+    return this.client.get(`/exchange_rates?json&date=01.01.20${year}}`);
+  };
   getCourse19 = (api: IExchange) =>
-    this.client.get('/exchange_rates?json&date=01.01.2019', api);
+    this.client.get('/exchange_rates?json&date=01.01.2019');
   getCourse20 = (api: IExchange) =>
     this.client.get('/exchange_rates?json&date=01.01.2020', api);
 
