@@ -17,3 +17,11 @@ export const scatter = {
   height: 6,
   rx: 2,
 };
+export const COLORS = {
+  CONCRETE: '#f3f3f3',
+  CONIFER: '#AADD33',
+};
+export const stroke = {
+  width: 5,
+};
+export const tickCount = 3;

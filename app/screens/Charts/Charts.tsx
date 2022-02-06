@@ -3,10 +3,15 @@ import { View, Text } from 'react-native';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { styles } from './Charts.styles';
 import { course } from '../Course/course';
-import { padding } from './data';
-import { xDomain } from './data';
-import { yDomain } from './data';
-import { scatter } from './data';
+import {
+  padding,
+  xDomain,
+  yDomain,
+  scatter,
+  stroke,
+  tickCount,
+  COLORS,
+} from './data';
 
 import {
   exchange18Slice,
@@ -21,7 +26,6 @@ import {
   HorizontalAxis,
   VerticalAxis,
 } from 'react-native-responsive-linechart';
-import { COLORS } from '../../utils/colors';
 
 export const Charts = () => {
   const cours = course();
@@ -53,7 +57,7 @@ export const Charts = () => {
           tickCount={11}
           theme={{ labels: { formatter: v => v.toFixed(2) } }}
         />
-        <HorizontalAxis tickCount={3} />
+        <HorizontalAxis tickCount={tickCount} />
         <Area
           theme={{
             gradient: {
@@ -64,7 +68,7 @@ export const Charts = () => {
         />
         <Line
           theme={{
-            stroke: { color: COLORS.CONIFER, width: 5 },
+            stroke: { color: COLORS.CONIFER, width: stroke.width },
             scatter: { default: scatter },
           }}
         />
@@ -82,7 +86,7 @@ export const Charts = () => {
           theme={{ labels: { formatter: v => v.toFixed(2) } }}
         />
 
-        <HorizontalAxis tickCount={3} />
+        <HorizontalAxis tickCount={tickCount} />
         <Area
           theme={{
             gradient: {
@@ -93,7 +97,7 @@ export const Charts = () => {
         />
         <Line
           theme={{
-            stroke: { color: COLORS.CONIFER, width: 5 },
+            stroke: { color: COLORS.CONIFER, width: stroke.width },
             scatter: { default: scatter },
           }}
         />

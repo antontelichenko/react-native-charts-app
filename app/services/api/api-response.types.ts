@@ -3,6 +3,7 @@ import { ApiResponse } from 'apisauce';
 import { IApiUser } from './api.types';
 
 import { IApiCourse } from '../../models/ICourse';
+import { ScreenStackHeaderConfigProps } from 'react-native-screens';
 
 export interface IApiLoginSuccessResponse {
   token: string;
