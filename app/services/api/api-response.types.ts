@@ -2,7 +2,6 @@ import { ApiResponse } from 'apisauce';
 
 import { IApiUser } from './api.types';
 
-import { IApiCourse } from '../../models/ICourse';
 import { ScreenStackHeaderConfigProps } from 'react-native-screens';
 
 export interface IApiLoginSuccessResponse {
@@ -28,14 +27,3 @@ export type RegisterUserResponse = ApiResponse<
   IApiRegisterSuccessResponse,
   IErrorResponse
 >;
-
-export interface IExchange {
-  data: {
-    date: string;
-    bank: string;
-    baseCurrency: number;
-    baseCurrencyLit: string;
-    exchangeRate: IApiCourse;
-  };
-  ok: boolean;
-}

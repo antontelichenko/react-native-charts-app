@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { IApiCourse } from '../../models/ICourse';
-import { IExchange } from '../../services/api/api-response.types';
+import { IExchangeResponse } from '../../services/api/api-response.types';
 
 interface ICourseState {
   course: {
