@@ -23,7 +23,7 @@
     "react-i18next": "^11.7.3",
     "react-native": "0.66.1",
     "react-native-gesture-handler": "^2.2.0",
-    "react-native-reanimated": "^2.3.1",
+    "react-native-reanimated": "^2.4.0",
     "react-native-responsive-linechart": "^5.7.1",
     "react-native-safe-area-context": "^3.1.7",
     "react-native-screens": "^2.10.1",

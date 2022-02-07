@@ -6,55 +6,29 @@ import { CourseTabNavigator } from './tab/course-tab-navigator';
 import { navigationRef } from '../services/navigator';
 import { GLOBAL_NAVIGATION_STACK_OPTIONS } from './options';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Course18 } from '../screens/Course/Course18';
-import { Course19 } from '../screens/Course/Course19';
-import { Course20 } from '../screens/Course/Course20';
-import { Charts } from '../screens/Charts/Charts';
+import { Course18StackNavigator } from './stacks/course18-stack-navigator';
+import { Course19StackNavigator } from './stacks/course19-stack-navigator';
+import { Course20StackNavigator } from './stacks/course20-stack-navigator';
+import { ChartsStackNavigator } from './stacks/charts-stack-navigator';
 
 const Tab = createBottomTabNavigator();
 
 export type RootParams = {
-  CourseTab: undefined;
-  HomeStack: undefined;
-  Course18Stack: undefined;
-  Course19Stack: undefined;
-  ChartsStack: undefined;
-  Course20Stack: undefined;
+  Main: undefined;
+  Course18: undefined;
+  Course19: undefined;
+  Course20: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootParams>();
 
-export const ChartsStackNavigator = () => (
-  <Stack.Navigator>
-    <Stack.Screen name="ChartsStack" component={Charts} />
-  </Stack.Navigator>
-);
-
-export const Course18StackNavigator = () => (
-  <Stack.Navigator>
-    <Stack.Screen name="Course18Stack" component={Course18} />
-  </Stack.Navigator>
-);
-
-export const Course19StackNavigator = () => (
-  <Stack.Navigator>
-    <Stack.Screen name="Course19Stack" component={Course19} />
-  </Stack.Navigator>
-);
-
-export const Course20StackNavigator = () => (
-  <Stack.Navigator>
-    <Stack.Screen name="Course20Stack" component={Course20} />
-  </Stack.Navigator>
-);
-
 const RootNavigator = () => (
   <NavigationContainer ref={navigationRef}>
     <Tab.Navigator>
-      <Tab.Screen name="Главная страница" component={ChartsStackNavigator} />
-      <Tab.Screen name="Курс 2018" component={Course18StackNavigator} />
-      <Tab.Screen name="Курс 2019" component={Course19StackNavigator} />
-      <Tab.Screen name="Курс 2020" component={Course20StackNavigator} />
+      <Tab.Screen name="Home" component={ChartsStackNavigator} />
+      <Tab.Screen name="Course 2018" component={Course18StackNavigator} />
+      <Tab.Screen name="Course 2019" component={Course19StackNavigator} />
+      <Tab.Screen name="Corse 2020" component={Course20StackNavigator} />
     </Tab.Navigator>
   </NavigationContainer>
 );

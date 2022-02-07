@@ -1,16 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { IApiCourse } from '../../models/ICourse';
-import { IExchange } from '../../services/api/api-response.types';
 
-interface ICourseState {
-  course: {
-    exchangeRate: IApiCourse[];
-    date: string;
-    bank: string;
-    baseCurrency: number;
-    baseCurrencyLit: string;
-  } | null;
-}
+import { IApiCourse } from './types';
+import { IExchange } from './types';
+import { ICourseState } from './types';
 
 const INITIAL_STATE: ICourseState = {
   course: null,

@@ -4,10 +4,11 @@ import { exchange18Slice } from '../../redux/slices';
 import { HomeScreen } from '..';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { styles } from './Course.styles';
+import { text } from './text';
 
 export const Course18 = () => {
+  const date = '01.01.2018';
   const dispatch = useAppDispatch();
-  const data18 = useAppSelector(state => state.course18);
 
   useEffect(() => {
     dispatch(
@@ -18,16 +19,21 @@ export const Course18 = () => {
     );
   }, [dispatch]);
 
+  const data18usd = useAppSelector(
+    state => state.course18.course?.exchangeRate[16].saleRateNB,
+  );
+  const data18eur = useAppSelector(
+    state => state.course18.course?.exchangeRate[22].saleRateNB,
+  );
+
   return (
     <View style={styles.container}>
       <HomeScreen />
-      <Text style={styles.text}>Курс национального банка на 01.01.2018</Text>
-      <Text style={styles.textCourse}>
-        USD: {data18.course?.exchangeRate[16].saleRateNB}
+      <Text style={styles.text}>
+        {text} {date}
       </Text>
-      <Text style={styles.textCourse}>
-        EUR: {data18.course?.exchangeRate[22].saleRateNB}
-      </Text>
+      <Text style={styles.textCourse}>USD: {data18usd}</Text>
+      <Text style={styles.textCourse}>EUR: {data18eur}</Text>
     </View>
   );
 };

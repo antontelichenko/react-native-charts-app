@@ -27,14 +27,3 @@ export type RegisterUserResponse = ApiResponse<
   IApiRegisterSuccessResponse,
   IErrorResponse
 >;
-
-export interface IExchange {
-  data: {
-    date: string;
-    bank: string;
-    baseCurrency: number;
-    baseCurrencyLit: string;
-    exchangeRate: IApiCourse;
-  };
-  ok: boolean;
-}

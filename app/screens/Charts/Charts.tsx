@@ -1,7 +1,17 @@
 import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { colors } from '../../utils/colors';
+import { styles } from './charts.styles';
+
+import {
+  padding,
+  xDomain,
+  yDomain,
+  scatter,
+  stroke,
+  tickCount,
+  COLORS,
+} from './data';
 
 import {
   exchange18Slice,
@@ -16,13 +26,9 @@ import {
   HorizontalAxis,
   VerticalAxis,
 } from 'react-native-responsive-linechart';
-import { COLORS } from '../../themes/colors';
 
 export const Charts = () => {
   const dispatch = useAppDispatch();
-  const data18 = useAppSelector(state => state.course18);
-  const data19 = useAppSelector(state => state.course19);
-  const data20 = useAppSelector(state => state.course20);
 
   useEffect(() => {
     dispatch(exchange18Slice.actions.getCourseStatistic18());
@@ -30,75 +36,93 @@ export const Charts = () => {
     dispatch(exchange20Slice.actions.getCourseStatistic20());
   }, [dispatch]);
 
-  const usd18 = data18.course?.exchangeRate[16].saleRateNB;
-  const usd19 = data19.course?.exchangeRate[16].saleRateNB;
-  const usd20 = data20.course?.exchangeRate[23].saleRateNB;
-  const eur18 = data18.course?.exchangeRate[22].saleRateNB;
-  const eur19 = data19.course?.exchangeRate[22].saleRateNB;
-  const eur20 = data20.course?.exchangeRate[8].saleRateNB;
+  const data18usd = useAppSelector(
+    state => state.course18.course?.exchangeRate[16].saleRateNB,
+  );
+  const data18eur = useAppSelector(
+    state => state.course18.course?.exchangeRate[22].saleRateNB,
+  );
+  const data19usd = useAppSelector(
+    state => state.course19.course?.exchangeRate[16].saleRateNB,
+  );
+  const data19eur = useAppSelector(
+    state => state.course19.course?.exchangeRate[22].saleRateNB,
+  );
+  const data20usd = useAppSelector(
+    state => state.course20.course?.exchangeRate[23].saleRateNB,
+  );
+  const data20eur = useAppSelector(
+    state => state.course20.course?.exchangeRate[8].saleRateNB,
+  );
+
+  const arrUsd = [
+    { x: 2018, y: data18usd! },
+    { x: 2019, y: data19usd! },
+    { x: 2020, y: data20usd! },
+  ];
+  const arrEur = [
+    { x: 2018, y: data18eur! },
+    { x: 2019, y: data19eur! },
+    { x: 2020, y: data20eur! },
+  ];
+
+  const dataUsd = arrUsd.map(el => el);
+  const dataEur = arrEur.map(el => el);
 
   return (
     <View>
-      <Text>Динамика изменения курса UAH-USD</Text>
+      <Text>Change of course UAH-USD</Text>
       <Chart
-        style={{ height: 250, width: 400 }}
-        data={[
-          { x: 2018, y: usd18! },
-          { x: 2019, y: usd19! },
-          { x: 2020, y: usd20! },
-        ]}
-        padding={{ left: 40, bottom: 20, right: 20, top: 20 }}
-        xDomain={{ min: 2018, max: 2020 }}
-        yDomain={{ min: 0, max: 30 }}>
+        style={{ height: styles.charts.height, width: styles.charts.width }}
+        data={dataUsd}
+        padding={padding}
+        xDomain={xDomain}
+        yDomain={yDomain}>
         <VerticalAxis
           tickCount={11}
           theme={{ labels: { formatter: v => v.toFixed(2) } }}
         />
-        <HorizontalAxis tickCount={3} />
+        <HorizontalAxis tickCount={tickCount} />
         <Area
           theme={{
             gradient: {
-              from: { color: colors.COLORS.CONCRETE },
-              to: { color: colors.COLORS.CONCRETE },
+              from: { color: COLORS.CONCRETE },
+              to: { color: COLORS.CONCRETE },
             },
           }}
         />
         <Line
           theme={{
-            stroke: { color: '#aadd33', width: 5 },
-            scatter: { default: { width: 6, height: 6, rx: 2 } },
+            stroke: { color: COLORS.CONIFER, width: stroke.width },
+            scatter: { default: scatter },
           }}
         />
       </Chart>
 
-      <Text>Динамика изменения курса UAH-EUR</Text>
+      <Text>Change of course UAH-EUR</Text>
       <Chart
-        style={{ height: 250, width: 400 }}
-        data={[
-          { x: 2018, y: eur18! },
-          { x: 2019, y: eur19! },
-          { x: 2020, y: eur20! },
-        ]}
-        padding={{ left: 40, bottom: 20, right: 20, top: 20 }}
-        xDomain={{ min: 2018, max: 2020 }}
-        yDomain={{ min: 0, max: 36 }}>
+        style={{ height: styles.charts.height, width: styles.charts.width }}
+        data={dataEur}
+        padding={padding}
+        xDomain={xDomain}
+        yDomain={yDomain}>
         <VerticalAxis
           tickCount={11}
           theme={{ labels: { formatter: v => v.toFixed(2) } }}
         />
-        <HorizontalAxis tickCount={3} />
+        <HorizontalAxis tickCount={tickCount} />
         <Area
           theme={{
             gradient: {
-              from: { color: colors.COLORS.CONCRETE },
-              to: { color: colors.COLORS.CONCRETE },
+              from: { color: COLORS.CONCRETE },
+              to: { color: COLORS.CONCRETE },
             },
           }}
         />
         <Line
           theme={{
-            stroke: { color: colors.COLORS.CONIFER, width: 5 },
-            scatter: { default: { width: 6, height: 6, rx: 2 } },
+            stroke: { color: COLORS.CONIFER, width: stroke.width },
+            scatter: { default: scatter },
           }}
         />
       </Chart>
