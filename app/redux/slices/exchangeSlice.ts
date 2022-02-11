@@ -8,20 +8,23 @@ const INITIAL_STATE: ICourseState = {
   course: null,
 };
 
-export const exchange18Slice = createSlice({
-  name: 'course18',
+export const exchangeSlice = createSlice({
+  name: 'course',
   initialState: INITIAL_STATE,
   reducers: {
-    getCourseStatistic18(state, data) {},
+    getCourseStatistic(state, data) {},
     getCourseStatisticSuccess(
       state,
       {
-        payload: courseStatistic18,
+        payload: courseStatistic,
       }: {
-        payload: IExchange;
+        payload: ICourseState;
       },
     ) {
-      state.course = courseStatistic18;
+      state.course = {
+        [courseStatistic.date.slice(-4)]: courseStatistic,
+        ...state.course,
+      };
     },
     getCourseStatisticError(state, action) {},
   },

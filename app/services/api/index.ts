@@ -8,6 +8,8 @@ import {
   IApiLoginUserPayload,
 } from './api-payload.types';
 
+import { watchGetCourse } from '../../sagas/exchange';
+
 class Api {
   private client: ApisauceInstance;
 
@@ -23,14 +25,13 @@ class Api {
     this.client.setHeader('Authorization', `Bearer ${token}`);
   };
 
-  getCourse18 = (year = '18') => {
-    console.tron.log('api', year);
+  getCourse = (year = 19) => {
     return this.client.get(`/exchange_rates?json&date=01.01.20${year}}`);
   };
-  getCourse19 = (api: IExchange) =>
-    this.client.get('/exchange_rates?json&date=01.01.2019');
-  getCourse20 = (api: IExchange) =>
-    this.client.get('/exchange_rates?json&date=01.01.2020', api);
+  // getCourse19 = (api: IExchange) =>
+  //   this.client.get('/exchange_rates?json&date=01.01.2019');
+  // getCourse20 = (api: IExchange) =>
+  //   this.client.get('/exchange_rates?json&date=01.01.2020', api);
 
   loginUser = (params: IApiLoginUserPayload) =>
     this.client.post<IApiUser>('/api/v1/auth/login', params);

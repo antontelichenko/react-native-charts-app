@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
 import { useAppDispatch, useAppSelector } from '../../hooks';
+
 import { styles } from './charts.styles';
 
 import {
@@ -13,11 +14,7 @@ import {
   COLORS,
 } from './data';
 
-import {
-  exchange18Slice,
-  exchange19Slice,
-  exchange20Slice,
-} from '../../redux/slices';
+import { exchangeSlice } from '../../redux/slices';
 
 import {
   Chart,
@@ -31,28 +28,48 @@ export const Charts = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(exchange18Slice.actions.getCourseStatistic18());
-    dispatch(exchange19Slice.actions.getCourseStatistic19());
-    dispatch(exchange20Slice.actions.getCourseStatistic20());
+    dispatch(
+      exchangeSlice.actions.getCourseStatistic({
+        type: 'getCourseStatistic',
+        payload: '18',
+      }),
+    );
+    dispatch(
+      exchangeSlice.actions.getCourseStatistic({
+        type: 'getCourseStatistic',
+        payload: '19',
+      }),
+    );
+    dispatch(
+      exchangeSlice.actions.getCourseStatistic({
+        payload: '20',
+        type: 'getCourseStatistic',
+      }),
+    );
   }, [dispatch]);
 
   const data18usd = useAppSelector(
-    state => state.course18.course?.exchangeRate[16].saleRateNB,
+    state => state.course.course['2018'].exchangeRate[16].saleRateNB,
   );
+
   const data18eur = useAppSelector(
-    state => state.course18.course?.exchangeRate[22].saleRateNB,
+    state => state.course.course['2018'].exchangeRate[22].saleRateNB,
   );
+
   const data19usd = useAppSelector(
-    state => state.course19.course?.exchangeRate[16].saleRateNB,
+    state => state.course.course['2019'].exchangeRate[16].saleRateNB,
   );
+
   const data19eur = useAppSelector(
-    state => state.course19.course?.exchangeRate[22].saleRateNB,
+    state => state.course.course['2019'].exchangeRate[22].saleRateNB,
   );
+
   const data20usd = useAppSelector(
-    state => state.course20.course?.exchangeRate[23].saleRateNB,
+    state => state.course.course['2020'].exchangeRate[23].saleRateNB,
   );
+
   const data20eur = useAppSelector(
-    state => state.course20.course?.exchangeRate[8].saleRateNB,
+    state => state.course.course['2020'].exchangeRate[8].saleRateNB,
   );
 
   const arrUsd = [
