@@ -25,13 +25,9 @@ class Api {
     this.client.setHeader('Authorization', `Bearer ${token}`);
   };
 
-  getCourse = (year = 19) => {
-    return this.client.get(`/exchange_rates?json&date=01.01.20${year}}`);
+  getCourse = (year = 2019) => {
+    return this.client.get(`/exchange_rates?json&date=01.01.${year}}`);
   };
-  // getCourse19 = (api: IExchange) =>
-  //   this.client.get('/exchange_rates?json&date=01.01.2019');
-  // getCourse20 = (api: IExchange) =>
-  //   this.client.get('/exchange_rates?json&date=01.01.2020', api);
 
   loginUser = (params: IApiLoginUserPayload) =>
     this.client.post<IApiUser>('/api/v1/auth/login', params);

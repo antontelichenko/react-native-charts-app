@@ -5,14 +5,17 @@ import { useAppDispatch, useAppSelector } from '../../hooks';
 import { styles } from './charts.styles';
 
 import {
-  padding,
-  xDomain,
-  yDomain,
+  PADDING,
+  X_DOMAIN,
+  Y_DOMAIN,
   scatter,
   stroke,
   tickCount,
-  COLORS,
-} from './data';
+  AreaTheme,
+  LineTheme,
+} from './Charts.data';
+
+import { COLORS } from '../../utils/colors';
 
 import { exchangeSlice } from '../../redux/slices';
 
@@ -92,56 +95,32 @@ export const Charts = () => {
       <Chart
         style={{ height: styles.charts.height, width: styles.charts.width }}
         data={dataUsd}
-        padding={padding}
-        xDomain={xDomain}
-        yDomain={yDomain}>
+        padding={PADDING}
+        xDomain={X_DOMAIN}
+        yDomain={Y_DOMAIN}>
         <VerticalAxis
           tickCount={11}
           theme={{ labels: { formatter: v => v.toFixed(2) } }}
         />
         <HorizontalAxis tickCount={tickCount} />
-        <Area
-          theme={{
-            gradient: {
-              from: { color: COLORS.CONCRETE },
-              to: { color: COLORS.CONCRETE },
-            },
-          }}
-        />
-        <Line
-          theme={{
-            stroke: { color: COLORS.CONIFER, width: stroke.width },
-            scatter: { default: scatter },
-          }}
-        />
+        <Area theme={AreaTheme} />
+        <Line theme={LineTheme} />
       </Chart>
 
       <Text>Change of course UAH-EUR</Text>
       <Chart
         style={{ height: styles.charts.height, width: styles.charts.width }}
         data={dataEur}
-        padding={padding}
-        xDomain={xDomain}
-        yDomain={yDomain}>
+        padding={PADDING}
+        xDomain={X_DOMAIN}
+        yDomain={Y_DOMAIN}>
         <VerticalAxis
           tickCount={11}
           theme={{ labels: { formatter: v => v.toFixed(2) } }}
         />
         <HorizontalAxis tickCount={tickCount} />
-        <Area
-          theme={{
-            gradient: {
-              from: { color: COLORS.CONCRETE },
-              to: { color: COLORS.CONCRETE },
-            },
-          }}
-        />
-        <Line
-          theme={{
-            stroke: { color: COLORS.CONIFER, width: stroke.width },
-            scatter: { default: scatter },
-          }}
-        />
+        <Area theme={AreaTheme} />
+        <Line theme={LineTheme} />
       </Chart>
     </View>
   );

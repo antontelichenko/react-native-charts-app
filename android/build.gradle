@@ -38,5 +38,5 @@ allprojects {
 }
 
 project.ext.react = [
-  enableHermes: true  // <- here | clean and rebuild if changing
+  enableHermes: true
 ]

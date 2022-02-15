@@ -15,9 +15,9 @@ const Tab = createBottomTabNavigator();
 
 export type RootParams = {
   Main: undefined;
-  Course18: undefined;
-  Course19: undefined;
-  Course20: undefined;
+  Course2018: undefined;
+  Course2019: undefined;
+  Course2020: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootParams>();
@@ -25,10 +25,10 @@ const Stack = createNativeStackNavigator<RootParams>();
 const RootNavigator = () => (
   <NavigationContainer ref={navigationRef}>
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={ChartsStackNavigator} />
-      <Tab.Screen name="Course 2018" component={Course18StackNavigator} />
-      <Tab.Screen name="Course 2019" component={Course19StackNavigator} />
-      <Tab.Screen name="Corse 2020" component={Course20StackNavigator} />
+      <Tab.Screen name="Main" component={ChartsStackNavigator} />
+      <Tab.Screen name="Course2018" component={Course18StackNavigator} />
+      <Tab.Screen name="Course2019" component={Course19StackNavigator} />
+      <Tab.Screen name="Course2020" component={Course20StackNavigator} />
     </Tab.Navigator>
   </NavigationContainer>
 );

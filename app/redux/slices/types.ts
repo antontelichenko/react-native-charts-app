@@ -7,28 +7,18 @@ export interface IApiCourse {
   purchaseRate?: number;
 }
 
+export interface IDataYear {
+  date: string;
+  bank: string;
+  baseCurrency: number;
+  baseCurrencyLit: string;
+  exchangeRate: IApiCourse[];
+}
+
 export interface ICourseState {
   course: {
-    2018: {
-      date: string;
-      bank: string;
-      baseCurrency: number;
-      baseCurrencyLit: string;
-      exchangeRate: IApiCourse[];
-    };
-    2019: {
-      date: string;
-      bank: string;
-      baseCurrency: number;
-      baseCurrencyLit: string;
-      exchangeRate: IApiCourse[];
-    };
-    2020: {
-      date: string;
-      bank: string;
-      baseCurrency: number;
-      baseCurrencyLit: string;
-      exchangeRate: IApiCourse[];
-    };
+    2018: IDataYear;
+    2019: IDataYear;
+    2020: IDataYear;
   } | null;
 }
