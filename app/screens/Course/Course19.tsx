@@ -4,7 +4,7 @@ import { exchangeSlice } from '../../redux/slices';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { Course } from './Course';
 import { styles } from './course.styles';
-import { data19 } from './Course19.data';
+import { DATA_19 } from './Course19.data';
 
 export const Course19 = () => {
   const dispatch = useAppDispatch();
@@ -20,12 +20,9 @@ export const Course19 = () => {
 
   const currency19 = useAppSelector(state => state.course.course['2019']);
 
-  const data19usd = currency19.exchangeRate[16].saleRateNB;
-  const data19eur = currency19.exchangeRate[22].saleRateNB;
-
   return (
     <View style={styles.container}>
-      <Course data19={data19} data19usd={data19usd} data19eur={data19eur} />
+      <Course DATA_19={DATA_19} currency19={currency19} />
     </View>
   );
 };

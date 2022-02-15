@@ -4,27 +4,36 @@ import { styles } from './course.styles';
 import { INFOCURRENCYDATES } from './infoCurrencyDates';
 
 export const Course = ({
-  data18,
-  data19,
-  data20,
-  data18usd,
-  data19usd,
-  data20usd,
-  data18eur,
-  data19eur,
-  data20eur,
+  DATA_18,
+  DATA_19,
+  DATA_20,
+  currency18,
+  currency19,
+  currency20,
 }) => {
-  const years = [data18, data19, data20].map(el => el);
-  const usd = [data18usd, data19usd, data20usd].map(el => el);
-  const eur = [data18eur, data19eur, data20eur].map(el => el);
+  const usd = [currency18, currency19].map(currency => (
+    <Text style={styles.textCourse}>
+      {currency?.exchangeRate[16].saleRateNB}
+    </Text>
+  ));
+  const usd20 = currency20?.exchangeRate[23].saleRateNB;
+
+  const eur = [currency18, currency19].map(currency => (
+    <Text style={styles.textCourse}>
+      {currency?.exchangeRate[22].saleRateNB}
+    </Text>
+  ));
+  const eur20 = currency20?.exchangeRate[8].saleRateNB;
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
-        {INFOCURRENCYDATES} {years}
+        {INFOCURRENCYDATES} {DATA_18} {DATA_19} {DATA_20}
       </Text>
-      <Text style={styles.textCourse}>USD:{usd}</Text>
+      <Text style={styles.textCourse}> USD: {usd}</Text>
+      <Text style={styles.textCourse}> {usd20} </Text>
       <Text style={styles.textCourse}>EUR: {eur}</Text>
+      <Text style={styles.textCourse}> {eur20} </Text>
     </View>
   );
 };

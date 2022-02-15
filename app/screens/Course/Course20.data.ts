@@ -1,1 +1,1 @@
-export const data20 = '01.01.2020';
+export const DATA_20 = '01.01.2020';
