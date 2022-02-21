@@ -7,33 +7,21 @@ export const Course = ({
   DATA_18,
   DATA_19,
   DATA_20,
-  currency18,
-  currency19,
-  currency20,
+  indicator18,
+  indicator19,
+  indicator20,
 }) => {
-  const usd = [currency18, currency19].map(currency => (
-    <Text style={styles.textCourse}>
-      {currency?.exchangeRate[16].saleRateNB}
-    </Text>
-  ));
-  const usd20 = currency20?.exchangeRate[23].saleRateNB;
-
-  const eur = [currency18, currency19].map(currency => (
-    <Text style={styles.textCourse}>
-      {currency?.exchangeRate[22].saleRateNB}
-    </Text>
-  ));
-  const eur20 = currency20?.exchangeRate[8].saleRateNB;
+  const unitUsd = [indicator18, indicator19, indicator20].map(el => [el?.usd]);
+  console.tron.log('unit: usd', unitUsd);
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
         {INFOCURRENCYDATES} {DATA_18} {DATA_19} {DATA_20}
       </Text>
-      <Text style={styles.textCourse}> USD: {usd}</Text>
-      <Text style={styles.textCourse}> {usd20} </Text>
-      <Text style={styles.textCourse}>EUR: {eur}</Text>
-      <Text style={styles.textCourse}> {eur20} </Text>
+      <Text style={styles.textCourse}> USD:{unitUsd} </Text>
+
+      <Text style={styles.textCourse}>EUR: </Text>
     </View>
   );
 };

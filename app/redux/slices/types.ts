@@ -22,3 +22,10 @@ export interface ICourseState {
     2020: IDataYear;
   } | null;
 }
+export interface IcurrencyState {
+  currency: {
+    year18: { usd: number | null; eur: number | null };
+    year19: { usd: number | null; eur: number | null };
+    year20: { usd: number | null; eur: number | null };
+  };
+}

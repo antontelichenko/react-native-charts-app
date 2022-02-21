@@ -34,18 +34,18 @@ export const Charts = () => {
     dispatch(
       exchangeSlice.actions.getCourseStatistic({
         type: 'getCourseStatistic',
-        payload: '18',
+        payload: '2018',
       }),
     );
     dispatch(
       exchangeSlice.actions.getCourseStatistic({
         type: 'getCourseStatistic',
-        payload: '19',
+        payload: '2019',
       }),
     );
     dispatch(
       exchangeSlice.actions.getCourseStatistic({
-        payload: '20',
+        payload: '2020',
         type: 'getCourseStatistic',
       }),
     );

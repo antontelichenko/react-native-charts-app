@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { IApiCourse } from './types';
-import { IExchange } from './types';
 import { ICourseState } from './types';
 
 const INITIAL_STATE: ICourseState = {
@@ -15,11 +13,7 @@ export const exchangeSlice = createSlice({
     getCourseStatistic(state, data) {},
     getCourseStatisticSuccess(
       state,
-      {
-        payload: courseStatistic,
-      }: {
-        payload: ICourseState;
-      },
+      { payload: courseStatistic }: { payload: ICourseState },
     ) {
       state.course = {
         [courseStatistic.date.slice(-4)]: courseStatistic,
