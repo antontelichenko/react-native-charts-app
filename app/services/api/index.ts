@@ -1,4 +1,5 @@
 import apisauce, { ApisauceInstance } from 'apisauce';
+import { IExchange } from '../api/api-response.types';
 
 import CONFIG from '../../config/env';
 import { IApiUser } from './api.types';
@@ -6,6 +7,8 @@ import {
   IApiRegisterUserPayload,
   IApiLoginUserPayload,
 } from './api-payload.types';
+
+import { watchGetCourse } from '../../sagas/exchange';
 
 class Api {
   private client: ApisauceInstance;
@@ -20,6 +23,10 @@ class Api {
 
   setAuthHeader = (token: string) => {
     this.client.setHeader('Authorization', `Bearer ${token}`);
+  };
+
+  getCourse = (year = 2019) => {
+    return this.client.get(`/exchange_rates?json&date=01.01.${year}}`);
   };
 
   loginUser = (params: IApiLoginUserPayload) =>

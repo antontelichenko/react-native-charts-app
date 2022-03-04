@@ -2,6 +2,8 @@ import { ApiResponse } from 'apisauce';
 
 import { IApiUser } from './api.types';
 
+import { IApiCourse } from '../../models/ICourse';
+
 export interface IApiLoginSuccessResponse {
   token: string;
   user: IApiUser;
