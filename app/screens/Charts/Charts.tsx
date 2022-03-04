@@ -52,42 +52,34 @@ export const Charts = () => {
   }, [dispatch]);
 
   const data18usd = useAppSelector(
-    state => state.course.course['2018'].exchangeRate[16].saleRateNB,
+    state => state.course.course.USD18.saleRateNB,
   );
-
-  const data18eur = useAppSelector(
-    state => state.course.course['2018'].exchangeRate[22].saleRateNB,
-  );
-
   const data19usd = useAppSelector(
-    state => state.course.course['2019'].exchangeRate[16].saleRateNB,
+    state => state.course.course.USD19.saleRateNB,
   );
-
-  const data19eur = useAppSelector(
-    state => state.course.course['2019'].exchangeRate[22].saleRateNB,
-  );
-
   const data20usd = useAppSelector(
-    state => state.course.course['2020'].exchangeRate[23].saleRateNB,
+    state => state.course.course.USD20.saleRateNB,
   );
-
+  const data18eur = useAppSelector(
+    state => state.course.course.EUR18.saleRateNB,
+  );
+  const data19eur = useAppSelector(
+    state => state.course.course.EUR19.saleRateNB,
+  );
   const data20eur = useAppSelector(
-    state => state.course.course['2020'].exchangeRate[8].saleRateNB,
+    state => state.course.course.EUR20.saleRateNB,
   );
 
-  const arrUsd = [
+  const dataUsd = [
     { x: 2018, y: data18usd! },
     { x: 2019, y: data19usd! },
     { x: 2020, y: data20usd! },
   ];
-  const arrEur = [
+  const dataEur = [
     { x: 2018, y: data18eur! },
     { x: 2019, y: data19eur! },
     { x: 2020, y: data20eur! },
   ];
-
-  const dataUsd = arrUsd.map(el => el);
-  const dataEur = arrEur.map(el => el);
 
   return (
     <View>

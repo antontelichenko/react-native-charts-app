@@ -3,7 +3,7 @@ import { exchangeSlice } from '../redux/slices';
 import { apiInstance } from '../services/api';
 import { ICourseState } from '../redux/slices/types';
 
-function* watchGetCourse(data) {
+export function* watchGetCourse(data) {
   const response: ICourseState = yield call(
     apiInstance.getCourse,
     data.payload.payload,

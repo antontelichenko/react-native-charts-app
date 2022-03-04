@@ -25,7 +25,7 @@ const Stack = createNativeStackNavigator<RootParams>();
 const RootNavigator = () => (
   <NavigationContainer ref={navigationRef}>
     <Tab.Navigator>
-      {/* <Tab.Screen name="Main" component={ChartsStackNavigator} /> */}
+      <Tab.Screen name="Main" component={ChartsStackNavigator} />
       <Tab.Screen name="Course2018" component={Course18StackNavigator} />
       <Tab.Screen name="Course2019" component={Course19StackNavigator} />
       <Tab.Screen name="Course2020" component={Course20StackNavigator} />
